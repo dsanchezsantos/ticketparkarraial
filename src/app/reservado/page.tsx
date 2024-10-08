@@ -31,7 +31,7 @@ export default function Reservado() {
                 />
             </motion.div>
 
-            <span className="max-sm:text-xl md:text-4xl">Reserva feita com sucesso!</span>
+            <span className="max-sm:text-xl md:text-4xl">Reserva solicitada com sucesso!</span>
 
             </div>
         </div>
