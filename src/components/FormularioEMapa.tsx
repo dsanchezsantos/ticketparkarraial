@@ -20,8 +20,7 @@ export default function FormularioEMapa() {
                 <Mapa showModalReserva={onOpen} setEstacionamentoReserva={setEstacionamentoReserva} />
             }
 
-            <Modal size="5xl" backdrop="blur" isDismissable={false} isOpen={isOpen} onOpenChange={onOpenChange}><ModalReserva estacionamento={estacionamentoReserva} /></Modal>
-
+            <Modal className="w-screen h-screen md:w-full" backdrop="blur" isDismissable={false} isOpen={isOpen} onOpenChange={onOpenChange} scrollBehavior="inside"><ModalReserva estacionamento={estacionamentoReserva} /></Modal>
         </>
     )
 }

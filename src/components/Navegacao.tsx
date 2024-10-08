@@ -14,7 +14,7 @@ export default function Navegacao(props: NavegacaoProps) {
     }
     
     return (
-        <div className="flex flex-col flex-1 justify-end">
+        <div className="flex flex-col flex-1 justify-end max-sm:pb-16 min-md:pb-0">
             <motion.div className="self-center"
                 animate= {{ y:[0, -10, -5, 0] }}
                 transition={{

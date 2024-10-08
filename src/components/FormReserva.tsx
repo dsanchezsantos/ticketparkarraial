@@ -110,7 +110,7 @@ export default function FormReserva(props: ShowMapaProps) {
                 </div>
             </div> 
 
-            <Modal size="2xl" backdrop="blur" isDismissable={false} isOpen={isOpen} onOpenChange={onOpenChange}><ModalInformacoes /></Modal>
+            <Modal className="w-screen h-full" backdrop="blur" isDismissable={false} isOpen={isOpen} onOpenChange={onOpenChange} scrollBehavior="inside"><ModalInformacoes /></Modal>
         </div>
     )
 }

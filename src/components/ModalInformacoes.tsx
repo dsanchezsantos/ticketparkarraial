@@ -8,7 +8,7 @@ export default function ModalInformacoes() {
         <ModalContent className="dark">
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-2 text-2xl">Bem-vindo(a) à TicketPark Arraial !</ModalHeader>
+              <ModalHeader className="flex flex-col gap-2 max-sm:max-h-screen text-lg md:text-2xl">Bem-vindo(a) à TicketPark Arraial !</ModalHeader>
               <ModalBody>
                 <p className="text-success-400">
                 Aqui, você pode garantir seu estacionamento com antecedência, de forma fácil e prática, para aproveitar ao máximo sua visita a Arraial do Cabo.

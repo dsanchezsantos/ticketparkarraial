@@ -19,11 +19,11 @@ export default function Cabecalho(props: NavegacaoProps) {
         <Image 
             src={Logo} 
             alt="Logo TicketPark" 
-            className={`max-w-96 h-auto self-center ${props.navegacao == 0 ? '' : 'cursor-pointer'}`} 
-            width={props.navegacao == 0 ? 320 : 110}
+            className={`max-w-96 h-auto self-center ${props?.navegacao == 0 ? '' : 'cursor-pointer'}`} 
+            width={props?.navegacao == 0 ? 320 : 110}
             onClick={() => {
-                if (props.navegacao == 1) {
-                    props.setNavegacao(0)
+                if (props?.navegacao == 1) {
+                    props?.setNavegacao(0)
                 }
             }}
         />
