@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Montserrat } from 'next/font/google'
+import { Comfortaa } from 'next/font/google'
 
-const font = Montserrat({
+const font = Comfortaa({
   subsets: ['latin'],
 })
 
