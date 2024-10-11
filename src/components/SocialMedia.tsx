@@ -5,7 +5,9 @@ import Link from "next/link";
 export default function SocialMedia() {
     return (
         <div className="flex w-full items-center justify-center pt-2 pr-1">
-            <Button size="sm" variant="light" color="success" className="text-xs" startContent={<IconBrandWhatsapp size={20} color="white"/>} />
+            <Link href="https://api.whatsapp.com/send?phone=5522997638812&text=Ol%C3%A1,%20gostaria%20de%20fazer%20uma%20reserva.%0" target="_blank">
+                <Button size="sm" variant="light" color="success" className="text-xs" startContent={<IconBrandWhatsapp size={20} color="white"/>} />
+            </Link>
             <Link href="https://www.instagram.com/sanchezdiogo/" target="_blank">
                 <Button size="sm" variant="light" color="danger" className="text-xs" startContent={<IconBrandInstagram size={20} color="white"/>} />
             </Link>
