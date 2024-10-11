@@ -4,6 +4,7 @@ import SocialMedia from "@/components/SocialMedia";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Logo from "../../assets/whiteLogo.png"
+import Link from "next/link";
 
 export default function Reservado() {
     return (
@@ -23,12 +24,14 @@ export default function Reservado() {
                                 }}
                                 className="pt-4"
                     >
-                <Image 
-                    src={Logo} 
-                    alt="Logo TicketPark" 
-                    className={`max-w-96 h-auto self-center cursor-pointer`} 
-                    width={320}
-                />
+                        <Link href="/">
+                            <Image 
+                                src={Logo} 
+                                alt="Logo TicketPark" 
+                                className={`max-w-96 h-auto self-center cursor-pointer`} 
+                                width={320}
+                            />
+                        </Link>
             </motion.div>
 
             <span className="max-sm:text-xl md:text-4xl">Reserva solicitada com sucesso!</span>

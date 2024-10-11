@@ -12,7 +12,7 @@ export default function Home() {
   const [navegacao, setNavegacao] = useState(0)
 
   return (
-    <div className="relative w-screen h-screen">
+    <div className="relative min-w-screen min-h-screen overflow-y-auto bg-zinc-800">
       <BackgroundImage />
 
       <div className=" flex flex-col items-center absolute w-screen h-screen">

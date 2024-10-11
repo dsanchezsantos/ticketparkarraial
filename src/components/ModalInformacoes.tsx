@@ -8,7 +8,7 @@ export default function ModalInformacoes() {
         <ModalContent className="dark">
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-2 max-sm:max-h-screen text-lg md:text-2xl">Bem-vindo(a) à TicketPark Arraial !</ModalHeader>
+              <ModalHeader className="flex flex-col gap-2 text-white max-sm:max-h-screen text-lg md:text-2xl">Bem-vindo(a) à TicketPark Arraial !</ModalHeader>
               <ModalBody>
                 <p className="text-success-400">
                 Aqui, você pode garantir seu estacionamento com antecedência, de forma fácil e prática, para aproveitar ao máximo sua visita a Arraial do Cabo.
@@ -22,7 +22,7 @@ export default function ModalInformacoes() {
                 <p className="text-blue-400">
                 - Se a visita for apenas para um dia de passeio (sem pernoite): nós indicamos estacionamentos conforme a localização do seu passeio turístico. Para quem vai fazer o famoso Passeio de Barco ou Mergulho, já temos pontos específicos bem próximos dos locais de partida. Para outros tipos de passeios, ajustamos as opções de estacionamento com base no serviço que você contratou.
                 </p>
-                <p className="font-extrabold text-xl">
+                <p className="font-extrabold text-xl text-white">
                 Escolha as opções adequadas em nosso formulário e deixe a nossa inteligência artificial escolher o melhor estacionamento parceiro para sua necessidade!
                 </p>
                 <p className="text-lg text-red-500">

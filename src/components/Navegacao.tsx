@@ -23,7 +23,7 @@ export default function Navegacao(props: NavegacaoProps) {
                     duration: 0.5,
                 }}
             >
-                <IconArrowBadgeDownFilled size={80} className={`cursor-pointer ${props.navegacao == 0 ? '' : 'hidden'}`} onClick={changeNavigation}/>
+                <IconArrowBadgeDownFilled size={80} color="white" className={`cursor-pointer ${props.navegacao == 0 ? '' : 'hidden'}`} onClick={changeNavigation}/>
             </motion.div>
         </div>
     )

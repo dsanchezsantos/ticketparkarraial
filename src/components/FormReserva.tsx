@@ -1,7 +1,7 @@
 'use client'
 import { opcoesDeFormulario } from "@/data/opcoesDeFormulario";
 import { Button, Modal, Select, SelectItem, useDisclosure } from "@nextui-org/react";
-import { IconEraser, IconInfoSquareRoundedFilled, IconMapPinSearch } from "@tabler/icons-react";
+import { IconEraser, IconInfoSquareRoundedFilled, IconMapPinSearch, IconSelector } from "@tabler/icons-react";
 import { useState, useEffect } from "react";
 import ModalInformacoes from "./ModalInformacoes";
 import ShowMapaProps from "@/utils/interfaces/ShowMapa";
@@ -91,10 +91,10 @@ export default function FormReserva(props: ShowMapaProps) {
                 {opcoesDeFormulario.map((opcao) => {
                     return (
                         <div id={opcao.node.toString()} key={opcao.node} className={`${opcao.node == 0 ? '' : 'hidden'}`} >
-                        <Select key={opcao.node} label={opcao.label} selectionMode="single" className='py-1'>
+                        <Select key={opcao.node} label={opcao.label} selectionMode="single" className='py-1' selectorIcon={<IconSelector color="white" />}>
                                 {opcao.opcoes.map((texto, indexOpcao) => {
                                     return (
-                                        <SelectItem className="bg-zinc-700" key={indexOpcao} value={texto[1]} onPress={() => setOption(texto[1])}>{texto[0]}</SelectItem>
+                                        <SelectItem className="bg-zinc-700 text-white" key={indexOpcao} value={texto[1]} onPress={() => setOption(texto[1])}>{texto[0]}</SelectItem>
                                     )
                                 })}
                         </Select>
@@ -110,7 +110,7 @@ export default function FormReserva(props: ShowMapaProps) {
                 </div>
             </div> 
 
-            <Modal className="w-screen h-full" backdrop="blur" isDismissable={false} isOpen={isOpen} onOpenChange={onOpenChange} scrollBehavior="inside"><ModalInformacoes /></Modal>
+            <Modal size="3xl" className="max-sm:w-screen h-full" backdrop="blur" isDismissable={false} isOpen={isOpen} onOpenChange={onOpenChange} scrollBehavior="inside"><ModalInformacoes /></Modal>
         </div>
     )
 }
