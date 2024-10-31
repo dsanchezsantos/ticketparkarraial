@@ -4,9 +4,9 @@ import { Button, Modal, Select, SelectItem, useDisclosure } from "@nextui-org/re
 import { IconEraser, IconInfoSquareRoundedFilled, IconMapPinSearch, IconSelector } from "@tabler/icons-react";
 import { useState, useEffect } from "react";
 import ModalInformacoes from "./ModalInformacoes";
-import ShowMapaProps from "@/utils/interfaces/ShowMapa";
+import { Dispatcher } from "@/utils/types/Dispatcher";
 
-export default function FormReserva(props: ShowMapaProps) {
+export default function FormReserva(props: {showMapa: boolean, setShowMapa: Dispatcher<boolean>}) {
 
     const [ option, setOption ] = useState(-1)
     const bairroDeDestino = document.getElementById('4');

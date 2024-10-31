@@ -35,6 +35,13 @@ export default function ModalReserva(props: {estacionamento: Estacionamentos}) {
                 {
                     isMobile ? (
                         <div>
+                            <div className="flex flex-col flex-1 gap-4 items-center w-full text-white text-lg mb-4">
+                                <Link href={`
+                                    https://www.google.com/maps/place/${props.estacionamento.localizacao.lat},${props.estacionamento.localizacao.lng}/@${props.estacionamento.localizacao.lat},${props.estacionamento.localizacao.lng},23z
+                                `} target="_blank">
+                                    <Button size="lg" variant="flat" color="primary" startContent={<IconMapSearch />} >Ver no Google Maps</Button>
+                                </Link>
+                            </div>
                             <p className="text-zinc-300 text-sm">Detalhes</p>
                             <hr className="pb-6 w-24"></hr>
                             <div className="flex items-center w-full bg-zinc-700/50 h-10 pl-2 rounded">
@@ -72,12 +79,7 @@ export default function ModalReserva(props: {estacionamento: Estacionamentos}) {
                                 }}
                             />
                             </div>
-                            <div className="flex flex-col flex-1 gap-4 items-center w-full text-white text-lg mt-20">
-                                <Link href={`
-                                    https://www.google.com/maps/place/${props.estacionamento.localizacao.lat},${props.estacionamento.localizacao.lng}/@${props.estacionamento.localizacao.lat},${props.estacionamento.localizacao.lng},23z
-                                `} target="_blank">
-                                    <Button size="lg" variant="flat" color="primary" startContent={<IconMapSearch />} >Ver no Google Maps</Button>
-                                </Link>
+                            <div className="flex flex-col flex-1 gap-4 items-center w-full text-white text-lg mt-4">
                                 <Link href="/reservado">
                                     <Button size="lg" color="success" variant="flat" startContent={<IconCalendarTime size={18}/>} onPress={handleClick}>Reservar</Button>
                                 </Link>
@@ -121,7 +123,7 @@ export default function ModalReserva(props: {estacionamento: Estacionamentos}) {
                                         </Tooltip>
                                     </TableCell>
                                     <TableCell>
-                                        <Tooltip content="Reservar" color="success" showArrow={true}>
+                                        <Tooltip content="Agendar reserva" color="success" showArrow={true}>
                                             <Link href="/reservado">
                                                 <Button size="sm" color="success" variant="flat" startContent={<IconCalendarTime size={18}/>} onPress={handleClick}/>
                                             </Link>
