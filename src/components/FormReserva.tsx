@@ -5,8 +5,11 @@ import { IconEraser, IconInfoSquareRoundedFilled, IconMapPinSearch, IconSelector
 import { useState, useEffect } from "react";
 import ModalInformacoes from "./ModalInformacoes";
 import { Dispatcher } from "@/utils/types/Dispatcher";
+import useDiariaContext from "@/utils/hooks/useDiariaContext";
 
 export default function FormReserva(props: {showMapa: boolean, setShowMapa: Dispatcher<boolean>}) {
+
+    const { changeDiaria } = useDiariaContext()
 
     const [ option, setOption ] = useState(-1)
     const bairroDeDestino = document.getElementById('4');
@@ -22,12 +25,14 @@ export default function FormReserva(props: {showMapa: boolean, setShowMapa: Disp
             qualPasseio?.classList.add('hidden')
             programacao?.classList.add('hidden')
             buttons?.classList.add('hidden')
+            changeDiaria(false)
         } else if (option == 0) {
             bairroDeDestino?.classList.add('hidden')
             localizarDestino?.classList.add('hidden')
             qualPasseio?.classList.add('hidden')
             programacao?.classList.remove('hidden')
             buttons?.classList.add('hidden')
+            changeDiaria(true)
         } else if (option == 2) {
             bairroDeDestino?.classList.add('hidden')
             localizarDestino?.classList.add('hidden')

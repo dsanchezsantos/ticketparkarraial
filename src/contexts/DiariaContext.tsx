@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 export interface DiariaInterface {
     isDiaria: boolean,
-    changeDiaria: () => void
+    changeDiaria: (changeDiariaValue: boolean) => void
 }
 
 export const DiariaContext = createContext({} as DiariaInterface)
@@ -11,16 +11,12 @@ export const DiariaProvider: React.FC<{children: React.ReactNode}> = ({children}
 
     const [diaria, setDiaria] = useState(false)
 
-    function changeDiaria() {
-        if (diaria) {
-            setDiaria(false)
-        } else {
-            setDiaria(true)
-        }
+    function changeDiaria(changeDiariaValue: boolean) {
+        setDiaria(changeDiariaValue)
     }
 
     return (
-        <DiariaContext.Provider value={{isDiaria: false, changeDiaria}}>
+        <DiariaContext.Provider value={{isDiaria: diaria, changeDiaria}}>
             {children}
         </DiariaContext.Provider>
     )
