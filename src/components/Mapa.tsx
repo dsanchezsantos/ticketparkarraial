@@ -58,7 +58,7 @@ export default function Mapa(props: {showModalReserva: () => void, setEstacionam
                                                             <TableCell>{estacionamento.nome}</TableCell>
                                                             <TableCell>{estacionamento.bairro}</TableCell>
                                                             <TableCell>
-                                                                <Button className="font-extrabold" size="sm" color="warning" radius="md" variant="shadow" onPress={() => {props.showModalReserva()}}>Ver</Button>
+                                                                <Button className="font-extrabold" size="sm" color="warning" radius="md" variant="shadow" onPress={() => {props.showModalReserva();props.setEstacionamentoReserva(estacionamento)}}>Ver</Button>
                                                             </TableCell>
                                                         </TableRow>
                                                     )
