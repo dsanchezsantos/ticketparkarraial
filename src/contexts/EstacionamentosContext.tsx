@@ -14,8 +14,12 @@ export const EstacionamentoProvider: React.FC<{children: React.ReactNode}> = ({c
     const [estacionamentosMap, setEstacionamentosMap] = useState([] as Estacionamentos[])
 
     function changeEstacionamentos(bairroParam: string) {
-        const estacionamentosFiltered = estacionamentos.filter( (estacionamento) => estacionamento.bairro === bairroParam )
-        setEstacionamentosMap(estacionamentosFiltered)
+        if (bairroParam != 'TODOS'){
+            const estacionamentosFiltered = estacionamentos.filter( (estacionamento) => estacionamento.bairro === bairroParam )
+            setEstacionamentosMap(estacionamentosFiltered)
+        } else {
+            setEstacionamentosMap(estacionamentos)
+        }
     }
 
     return (

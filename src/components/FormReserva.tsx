@@ -59,6 +59,7 @@ export default function FormReserva(props: {showMapa: boolean, setShowMapa: Disp
         } else if (option == 8) {
             bairroDeDestino?.classList.add('hidden')
             buttons?.classList.remove('hidden')
+            changeEstacionamentos('TODOS')
         } else if (option == 9) {
             //TODO Buscar estacionamentos Praia Grande
             buttons?.classList.remove('hidden')
