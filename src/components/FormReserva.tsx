@@ -6,10 +6,13 @@ import { useState, useEffect } from "react";
 import ModalInformacoes from "./ModalInformacoes";
 import { Dispatcher } from "@/utils/types/Dispatcher";
 import useDiariaContext from "@/utils/hooks/useDiariaContext";
+import { Bairros } from "@/utils/enums/Bairros";
+import useEstacionamentoContext from "@/utils/hooks/useEstacionamentoContext";
 
 export default function FormReserva(props: {showMapa: boolean, setShowMapa: Dispatcher<boolean>}) {
 
     const { changeDiaria } = useDiariaContext()
+    const { changeEstacionamentos } = useEstacionamentoContext()
 
     const [ option, setOption ] = useState(-1)
     const bairroDeDestino = document.getElementById('4');
@@ -50,6 +53,7 @@ export default function FormReserva(props: {showMapa: boolean, setShowMapa: Disp
             //TODO Buscar estacionamentos Praia dos Anjos
             localizarDestino?.classList.add('hidden')
             buttons?.classList.remove('hidden')
+            changeEstacionamentos(Bairros.PRAIADOSANJOS)
         } else if (option == 7) {
             bairroDeDestino?.classList.remove('hidden')
         } else if (option == 8) {
@@ -58,15 +62,19 @@ export default function FormReserva(props: {showMapa: boolean, setShowMapa: Disp
         } else if (option == 9) {
             //TODO Buscar estacionamentos Praia Grande
             buttons?.classList.remove('hidden')
+            changeEstacionamentos(Bairros.PRAIAGRANDE)
         } else if (option == 10) {
             //TODO Buscar estacionamentos Prainha
             buttons?.classList.remove('hidden')
+            changeEstacionamentos(Bairros.PRAINHA)
         } else if (option == 11) {
             //TODO Buscar estacionamentos Praia dos Anjos
             buttons?.classList.remove('hidden')
+            changeEstacionamentos(Bairros.PRAIADOSANJOS)
         } else if (option == 12) {
             //TODO Buscar estacionamentos Centro
             buttons?.classList.remove('hidden')
+            changeEstacionamentos(Bairros.CENTRO)
         } else if (option == 13) {
             bairroDeDestino?.classList.add('hidden')
             localizarDestino?.classList.add('hidden')

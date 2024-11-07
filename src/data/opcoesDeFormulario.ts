@@ -1,4 +1,4 @@
-import FormularioOpcoes from "@/utils/interfaces/FormularioOpcoes";
+ import FormularioOpcoes from "@/utils/interfaces/FormularioOpcoes";
 
 export const opcoesDeFormulario: FormularioOpcoes[] = [
     {label: 'Tipo de reserva', opcoes: [['Diária', 0], ['Pernoite', 1]], node: 0},

@@ -1,11 +1,13 @@
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import EstacionametosPins from "./EstacionamentosPins";
-import { estacionamentos } from "@/data/estacionamentos";
 import { Dispatcher } from "@/utils/types/Dispatcher";
 import Estacionamentos from "@/utils/interfaces/Estacionamentos";
 import { isMobile } from "react-device-detect";
 import { Button, Card, CardBody, Tab, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Tabs } from "@nextui-org/react";
+import useEstacionamentoContext from "@/utils/hooks/useEstacionamentoContext";
 export default function Mapa(props: {showModalReserva: () => void, setEstacionamentoReserva: Dispatcher<Estacionamentos>}) {
+
+    const { estacionamentosMap } = useEstacionamentoContext()
 
     return (
         <div className="flex flex-1 w-full h-full pb-8">
@@ -25,7 +27,7 @@ export default function Mapa(props: {showModalReserva: () => void, setEstacionam
                                             mapId="b095d1fa09f0c572"
                                             streetViewControl={false}
                                             >
-                                            <EstacionametosPins estacionamentos={estacionamentos} showModalReserva={props.showModalReserva} setEstacionamentoReserva={props.setEstacionamentoReserva} />
+                                            <EstacionametosPins estacionamentos={estacionamentosMap} showModalReserva={props.showModalReserva} setEstacionamentoReserva={props.setEstacionamentoReserva} />
                                         </Map>
                                     </CardBody>
                                 </Card>
@@ -48,7 +50,7 @@ export default function Mapa(props: {showModalReserva: () => void, setEstacionam
                                                 <TableColumn>Ações</TableColumn>
                                             </TableHeader>
                                             <TableBody emptyContent={"Vazio."}>
-                                                {estacionamentos.map((estacionamento) => {
+                                                {estacionamentosMap.map((estacionamento) => {
                                                     return (
                                                         <TableRow
                                                             key={estacionamento.nome}
@@ -84,7 +86,7 @@ export default function Mapa(props: {showModalReserva: () => void, setEstacionam
                                             mapId="b095d1fa09f0c572"
                                             streetViewControl={false}
                                             >
-                                            <EstacionametosPins estacionamentos={estacionamentos} showModalReserva={props.showModalReserva} setEstacionamentoReserva={props.setEstacionamentoReserva} />
+                                            <EstacionametosPins estacionamentos={estacionamentosMap} showModalReserva={props.showModalReserva} setEstacionamentoReserva={props.setEstacionamentoReserva} />
                                         </Map>
                                     </CardBody>
                                 </Card>
@@ -108,7 +110,7 @@ export default function Mapa(props: {showModalReserva: () => void, setEstacionam
                                                 <TableColumn>Ações</TableColumn>
                                             </TableHeader>
                                             <TableBody emptyContent={"Vazio."}>
-                                                {estacionamentos.map((estacionamento) => {
+                                                {estacionamentosMap.map((estacionamento) => {
                                                     return (
                                                         <TableRow
                                                             key={estacionamento.nome}
@@ -118,7 +120,7 @@ export default function Mapa(props: {showModalReserva: () => void, setEstacionam
                                                             <TableCell>{estacionamento.nome}</TableCell>
                                                             <TableCell>{estacionamento.bairro}</TableCell>
                                                             <TableCell>
-                                                                <Button className="font-extrabold" size="sm" color="warning" radius="md" variant="shadow" onPress={() => {props.showModalReserva()}}>Ver</Button>
+                                                                <Button className="font-extrabold" size="sm" color="warning" radius="md" variant="shadow" onPress={() => {props.showModalReserva();props.setEstacionamentoReserva(estacionamento)}}>Ver</Button>
                                                             </TableCell>
                                                         </TableRow>
                                                     )
